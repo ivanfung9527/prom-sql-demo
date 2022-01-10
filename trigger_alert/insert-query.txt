@@ -1,0 +1,9 @@
+insert into Companies values
+(5, 'Company3', 'SWE'),
+(6, 'Company4', 'SWE'),
+(7, 'Company5', 'SWE'),
+(8, 'Company6', 'SWE');
+
+insert into Requests values
+(5, 100),
+(6, 37);

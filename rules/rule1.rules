@@ -1,0 +1,20 @@
+groups:
+  - name: example-rule
+    rules:
+      - alert: Response_Time_Count_Exceed_5
+        expr: query_result_response_time_count > 5
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Request time count exceed 2, currently {{$value}}"
+
+  - name: example-rule2
+    rules:
+      - alert: Nr_Companies_per_Country_SWE_Exceed_3
+        expr: query_result_nr_companies_per_country{country="swe"} > 3
+        for: 10s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Number of company in SWE exceed 3, currently {{$value}}"
