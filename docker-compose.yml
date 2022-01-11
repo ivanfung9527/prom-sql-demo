@@ -60,6 +60,14 @@ services:
         restart: always
         ports:
             - 8081:80
-
-
-        
+    
+    prom-alertmanager:
+        image: prom/alertmanager
+        links:
+            - prometheus:prometheus
+        depends_on:
+            - prometheus
+        ports:
+            - 9093:9093
+        volumes:
+            - ${PWD}/alertmanager.yml:/etc/alertmanager/alertmanager.yml
